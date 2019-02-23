@@ -10,6 +10,8 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
+import { MatInputModule } from "@angular/material/input";
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 /*App components*/
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -24,6 +26,7 @@ import { ReviewsComponent } from "./components/home-page/reviews/reviews.compone
 import { ContactComponent } from "./components/shared/components/contact/contact.component";
 import { NavbarComponent } from "./components/shared/components/navbar/navbar.component";
 import { SidenavComponent } from "./components/shared/components/sidenav/sidenav.component";
+import { MainSearchComponent } from "./components/shared/components/main-search/main-search.component";
 
 const appRoutes: Routes = [
   {
@@ -46,7 +49,8 @@ const appRoutes: Routes = [
     BannerComponent,
     FeatureJobsComponent,
     ReviewsComponent,
-    ContactComponent
+    ContactComponent,
+    MainSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,8 @@ const appRoutes: Routes = [
     MatIconModule,
     FlexLayoutModule,
     MatListModule,
+    MatInputModule,
+    MatFormFieldModule
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
