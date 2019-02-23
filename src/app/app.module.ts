@@ -17,6 +17,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { SignupComponent } from './components/auth/signup/signup.component';
 import { HeaderComponent } from './components/home-page/header/header.component';
+import { CatergoriesComponent } from './components/home-page/catergories/catergories.component';
 
 const appRoutes: Routes = [
   {
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    HeaderComponent
+    HeaderComponent,
+    CatergoriesComponent
   ],
   imports: [
     BrowserModule,
