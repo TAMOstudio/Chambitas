@@ -20,6 +20,7 @@ import { HeaderComponent } from './components/home-page/header/header.component'
 import { CatergoriesComponent } from './components/home-page/catergories/catergories.component';
 import { BannerComponent } from './components/home-page/banner/banner.component';
 import { FeatureJobsComponent } from './components/home-page/feature-jobs/feature-jobs.component';
+import { ReviewsComponent } from './components/home-page/reviews/reviews.component';
 
 const appRoutes: Routes = [
   {
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     CatergoriesComponent,
     BannerComponent,
-    FeatureJobsComponent
+    FeatureJobsComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
