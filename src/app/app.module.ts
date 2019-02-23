@@ -19,6 +19,7 @@ import { SignupComponent } from './components/auth/signup/signup.component';
 import { HeaderComponent } from './components/home-page/header/header.component';
 import { CatergoriesComponent } from './components/home-page/catergories/catergories.component';
 import { BannerComponent } from './components/home-page/banner/banner.component';
+import { FeatureJobsComponent } from './components/home-page/feature-jobs/feature-jobs.component';
 
 const appRoutes: Routes = [
   {
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     SignupComponent,
     HeaderComponent,
     CatergoriesComponent,
-    BannerComponent
+    BannerComponent,
+    FeatureJobsComponent
   ],
   imports: [
     BrowserModule,
