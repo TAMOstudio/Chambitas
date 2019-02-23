@@ -11,6 +11,7 @@ import { SidenavComponent } from "./components/shared/sidenav/sidenav.component"
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
 
 const appRoutes: Routes = [
   {
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     FlexLayoutModule,
+    MatListModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
