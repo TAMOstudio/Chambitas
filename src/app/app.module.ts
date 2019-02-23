@@ -21,6 +21,7 @@ import { CatergoriesComponent } from './components/home-page/catergories/catergo
 import { BannerComponent } from './components/home-page/banner/banner.component';
 import { FeatureJobsComponent } from './components/home-page/feature-jobs/feature-jobs.component';
 import { ReviewsComponent } from './components/home-page/reviews/reviews.component';
+import { ContactComponent } from './components/shared/contact/contact.component';
 
 const appRoutes: Routes = [
   {
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     CatergoriesComponent,
     BannerComponent,
     FeatureJobsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
