@@ -1,21 +1,20 @@
-mat-sidenav-container,
-mat-sidenav-content,
-mat-sidenav {
-  height: 100%;
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
 }
 
-mat-sidenav {
-  width: 250px;
+a:hover,
+a:active {
+  color: grey;
 }
 
-.sidenav-button {
-  height: 24px;
+.navigation-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.nav {
-  &-items {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+.nav-caption {
+  padding-left: 10px;
 }

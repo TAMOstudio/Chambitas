@@ -6,14 +6,13 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  toggleSidenavBar = false;
   @Output()
-  toggle = new EventEmitter<boolean>();
+  sidebarToggle = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit() {}
 
-  toggleSidebar() {
-    this.toggle.emit(null);
+  onToggleSidenav() {
+    this.sidebarToggle.emit();
   }
 }

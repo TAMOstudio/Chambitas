@@ -1,5 +1,10 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { MatSidenav } from "@angular/material/sidenav";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  EventEmitter,
+  Output
+} from "@angular/core";
 
 @Component({
   selector: "app-sidenav",
@@ -7,12 +12,12 @@ import { MatSidenav } from "@angular/material/sidenav";
   styleUrls: ["./sidenav.component.scss"]
 })
 export class SidenavComponent implements OnInit {
-  @ViewChild("sidenav") sidenav: MatSidenav;
+  @Output()
+  sidebarToggle = new EventEmitter<void>();
   constructor() {}
 
   ngOnInit() {}
-
-  onToggle() {
-    this.sidenav.toggle();
+  onToggleSidenav() {
+    this.sidebarToggle.emit();
   }
 }

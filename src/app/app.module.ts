@@ -12,18 +12,22 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
+import { HomePageComponent } from "./components/home-page/home-page.component";
 
 const appRoutes: Routes = [
   {
     path: "",
-    redirectTo: "",
-    pathMatch: "full",
-    component: NavbarComponent
+    component: HomePageComponent
   }
 ];
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, SidenavComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    SidenavComponent,
+    HomePageComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
