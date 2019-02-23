@@ -10,11 +10,16 @@ ul {
     text-decoration: none;
     color: #fff;
     font-size: 14px;
-  }
+    width: 200px;
+    padding: 8px;
+    margin-right: 8px;
 
-  a:hover,
-  a:active {
-    color: grey;
+    &:hover,
+    &:active {
+      color: white;
+      border-radius: 50px;
+      background-color: #e91e63;
+    }
   }
 
   .logout {
