@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatSidenav } from "@angular/material/sidenav";
 
 @Component({
   selector: "app-sidenav",
@@ -6,8 +7,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./sidenav.component.scss"]
 })
 export class SidenavComponent implements OnInit {
-  openSidebar = false;
+  @ViewChild("sidenav") sidenav: MatSidenav;
   constructor() {}
 
   ngOnInit() {}
+
+  onToggle() {
+    this.sidenav.toggle();
+  }
 }
