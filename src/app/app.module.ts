@@ -14,6 +14,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { HomePageComponent } from "./components/home-page/home-page.component";
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { SignupComponent } from './components/auth/signup/signup.component';
 
 const appRoutes: Routes = [
   {
@@ -28,7 +30,9 @@ const appRoutes: Routes = [
     NavbarComponent,
     SidenavComponent,
     HomePageComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
