@@ -1,5 +1,6 @@
 export interface Categories {
+  icon: string;
   name: string;
-  business: [];
+  businesses: [];
   order: number;
 }
