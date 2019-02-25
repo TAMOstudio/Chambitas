@@ -8,7 +8,7 @@ export interface Business {
   website: string;
   address: string;
   yearFounded: string;
-  owner: string;
+  ownerUid: string;
   phoneNumber: number;
   hours: Date[];
   servicesOffered: string[];

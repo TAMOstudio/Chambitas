@@ -4,5 +4,7 @@ export interface Reviews {
   title: string;
   description: string;
   stars: number;
-  user: User;
+  userUid: string;
+  userName: string;
+  businessUid: string;
 }

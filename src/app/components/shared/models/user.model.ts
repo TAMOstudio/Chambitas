@@ -8,4 +8,5 @@ export interface User {
   businessReviews: Reviews[];
   userReviews: Reviews[];
   contacts: Business[];
+  bussinessUid: string;
 }
