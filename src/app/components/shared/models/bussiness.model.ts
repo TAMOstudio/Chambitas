@@ -7,6 +7,11 @@ export interface Business {
   numberOfEmployees: number;
   website: string;
   address: string;
+  zipCode: number;
+  state: string;
+  country: string;
+  latitude: number;
+  longitute: number;
   yearFounded: string;
   ownerUid: string;
   phoneNumber: number;
@@ -17,4 +22,5 @@ export interface Business {
   tags: string[];
   membershipPaid: boolean;
   membershipType: string;
+  workType: string;
 }
