@@ -11,7 +11,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 /*App components*/
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -19,7 +19,6 @@ import { FooterComponent } from "./components/shared/components/footer/footer.co
 import { LoginComponent } from "./components/auth/login/login.component";
 import { SignupComponent } from "./components/auth/signup/signup.component";
 import { HeaderComponent } from "./components/home-page/header/header.component";
-import { CatergoriesComponent } from "./components/home-page/catergories/catergories.component";
 import { BannerComponent } from "./components/home-page/banner/banner.component";
 import { FeatureJobsComponent } from "./components/home-page/feature-jobs/feature-jobs.component";
 import { ReviewsComponent } from "./components/home-page/reviews/reviews.component";
@@ -27,6 +26,7 @@ import { ContactComponent } from "./components/shared/components/contact/contact
 import { NavbarComponent } from "./components/shared/components/navbar/navbar.component";
 import { SidenavComponent } from "./components/shared/components/sidenav/sidenav.component";
 import { MainSearchComponent } from "./components/shared/components/main-search/main-search.component";
+import { CategoriesComponent } from "./components/home-page/categories/categories.component";
 
 const appRoutes: Routes = [
   {
@@ -45,12 +45,13 @@ const appRoutes: Routes = [
     LoginComponent,
     SignupComponent,
     HeaderComponent,
-    CatergoriesComponent,
+    CategoriesComponent,
     BannerComponent,
     FeatureJobsComponent,
     ReviewsComponent,
     ContactComponent,
-    MainSearchComponent
+    MainSearchComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,7 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     MatListModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
