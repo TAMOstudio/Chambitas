@@ -14,4 +14,7 @@ export interface Business {
   servicesOffered: string[];
   businessReviews: Reviews[];
   userReviews: Reviews[];
+  tags: string[];
+  membershipPaid: boolean;
+  membershipType: string;
 }
