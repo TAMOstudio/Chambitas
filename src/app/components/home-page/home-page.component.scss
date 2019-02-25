@@ -21,6 +21,7 @@
   border-bottom-left-radius: 50%;
   left: 50%;
   margin-left: -65px;
+
   a {
     position: absolute;
     left: 50%;
@@ -47,5 +48,9 @@
     font-size: 24px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     line-height: 60px;
+    &:hover {
+      color: #fff;
+      background-color: #fb236a;
+    }
   }
 }
