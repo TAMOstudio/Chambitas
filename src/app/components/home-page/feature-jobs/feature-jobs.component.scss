@@ -36,8 +36,30 @@
       z-index: 10;
       border-left: 4px solid $third;
       overflow: hidden;
+      height: 338px;
     }
   }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .wrapper {
+    grid-area: wrapper;
+  }
+
+  .location {
+    grid-area: location;
+  }
+
+  .reviews {
+    grid-area: reviews;
+  }
+
+  .work-type {
+    grid-area: work-type;
+  }
+
   .logo,
   .wrapper,
   .location,

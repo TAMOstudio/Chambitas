@@ -10,7 +10,39 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "category category category category" "category category category category";
+  grid-template-areas: "category-1 category-2 category-3 category-4" "category-5 category-6 category-7 category-8";
+}
+
+.category-1 {
+  grid-area: category-1;
+}
+
+.category-2 {
+  grid-area: category-2;
+}
+
+.category-3 {
+  grid-area: category-3;
+}
+
+.category-4 {
+  grid-area: category-4;
+}
+
+.category-5 {
+  grid-area: category-5;
+}
+
+.category-6 {
+  grid-area: category-6;
+}
+
+.category-7 {
+  grid-area: category-7;
+}
+
+.category-8 {
+  grid-area: category-8;
 }
 
 .category {
@@ -85,5 +117,8 @@
   .category {
     border: 0;
     width: 100%;
+    &:hover {
+      height: 160px;
+    }
   }
 }
