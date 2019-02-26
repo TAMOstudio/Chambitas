@@ -36,7 +36,7 @@
       z-index: 10;
       border-left: 4px solid $third;
       overflow: hidden;
-      height: 338px;
+      height: 94px;
     }
   }
 
@@ -136,6 +136,9 @@
     .chambeadores {
       display: block;
       height: 308px;
+      &:hover {
+        height: 340px;
+      }
     }
     .logo,
     .wrapper,
