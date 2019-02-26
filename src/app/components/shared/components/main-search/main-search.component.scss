@@ -1,3 +1,6 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,11 +16,11 @@
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       border-radius: 8px;
-      background-color: #fff;
+      background-color: $white;
       border: 0px;
       padding: 16px;
       padding-right: 50px;
-      color: grey;
+      color: $grey-200;
       -webkit-appearance: none;
       -moz-appearance: none;
       text-indent: 1px;
@@ -32,7 +35,7 @@
         font-size: 24px;
         right: 16px;
         top: 22px;
-        color: #fb236a;
+        color: $secondary;
       }
       .input-text {
         height: 62px;
@@ -49,7 +52,7 @@
         font-size: 24px;
         right: 16px;
         top: 22px;
-        color: #fb236a;
+        color: $secondary;
       }
       select {
         height: 62px;
@@ -62,30 +65,46 @@
       justify-content: center;
       align-items: center;
       font-size: 30px;
-      color: #fff;
-      background-color: #8b91dd;
+      color: $white;
+      background-color: $third;
       height: 62px;
       width: 62px;
       border-radius: 8px;
       cursor: pointer;
 
       &:hover {
-        background-color: #fb236a;
+        background-color: $secondary;
       }
     }
   }
 }
 .categories {
   margin: 42px 0;
-  color: #fff;
+  color: $white;
   span {
     padding: 8px;
     border-radius: 50px;
-    border: 2px solid #fb236a;
+    border: 2px solid $secondary;
     cursor: pointer;
 
     &:hover {
-      background-color: #fb236a;
+      background-color: $secondary;
+    }
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .container {
+    form {
+      display: block;
+      .search-text,
+      .search-dropdown {
+        width: 100%;
+      }
+
+      .search-btn {
+        display: none;
+      }
     }
   }
 }

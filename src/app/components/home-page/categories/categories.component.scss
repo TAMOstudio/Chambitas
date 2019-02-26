@@ -1,9 +1,8 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
 .title {
-  font-size: 42px;
-  margin: 42px 0;
-  display: block;
-  text-align: center;
-  font-weight: 700;
+  @include title();
 }
 
 .categories {
@@ -15,7 +14,7 @@
 }
 
 .category {
-  border: 1px solid #f0f0f0;
+  border: 1px solid $grey-100;
   border-width: 1px 1px 1px 1px;
   height: 200px;
   display: flex;
@@ -32,15 +31,15 @@
   }
 
   &:hover {
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    @include light-shadow();
+    background-color: $white;
     width: 104%;
     margin-left: -2%;
     height: 102%;
     z-index: 10;
     .category-body {
       .icon {
-        color: #fb236a;
+        color: $secondary;
       }
     }
   }
@@ -49,7 +48,7 @@
     .icon {
       display: block;
       text-align: center;
-      color: #8b91dd;
+      color: $third;
       font-size: 60px;
     }
     .name {
@@ -59,7 +58,7 @@
     }
     .businesses {
       text-align: center;
-      color: #fb236a;
+      color: $secondary;
       font-size: 12px;
     }
   }
@@ -70,19 +69,10 @@
   justify-content: center;
   margin: 42px;
   button {
-    width: 214px;
-    text-align: center;
-    background-color: #fff;
-    border: 2px solid #fb236a;
-    border: 2px solid #fb236a;
-    border-radius: 50px;
-    font-size: 14px;
-    padding: 14px 32px;
-    cursor: pointer;
+    @include medium-button($secondary);
 
     &:hover {
-      background-color: #fb236a;
-      color: #fff;
+      @include button-hover-primary();
     }
   }
 }
@@ -93,6 +83,7 @@
     display: block;
   }
   .category {
+    border: 0;
     width: 100%;
   }
 }

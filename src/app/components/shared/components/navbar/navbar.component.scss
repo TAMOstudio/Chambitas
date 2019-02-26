@@ -1,6 +1,8 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
 a {
   text-decoration: none;
-  color: #fff;
+  color: $white;
   font-size: 14px;
 }
 
@@ -8,7 +10,7 @@ ul {
   list-style-type: none;
   a {
     text-decoration: none;
-    color: #fff;
+    color: $white;
     font-size: 14px;
     width: 200px;
     padding: 8px;
@@ -18,7 +20,7 @@ ul {
     &:active {
       color: white;
       border-radius: 50px;
-      background-color: #e91e63;
+      background-color: $secondary;
     }
   }
 

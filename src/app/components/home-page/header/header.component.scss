@@ -1,24 +1,24 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
 .banner {
-  background: linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.5),
-      rgba(63, 81, 181, 0.8)
-    ),
-    url("../../../../assets/banner1.jpg");
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
+  @include banner("banner1.jpg");
   height: 600px;
-  padding: 42px;
   .title,
   .sub-title {
-    margin-top: 16px;
-    color: #fff;
-    text-align: center;
+    @include title-sub-title();
   }
 
   .title {
-    margin-top: 100px;
-    font-size: 42px;
+    @include title();
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .banner {
+    .title {
+      margin-top: 24px;
+      font-size: 36px;
+    }
   }
 }
