@@ -72,4 +72,6 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  // https://grandetest.com/theme/jobhunt-html/index.html
+}
