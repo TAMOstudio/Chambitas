@@ -9,37 +9,16 @@
   form {
     display: flex;
     justify-content: center;
-
-    input,
-    select {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      border-radius: 8px;
-      background-color: $white;
-      border: 0px;
-      padding: 16px;
-      padding-right: 50px;
-      color: $grey-200;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-indent: 1px;
-      text-overflow: "";
-    }
     .search-text {
       width: 600px;
       margin-right: 32px;
       position: relative;
-      i {
-        position: absolute;
-        font-size: 24px;
-        right: 16px;
-        top: 22px;
-        color: $secondary;
+
+      input {
+        margin-top: 4px;
       }
-      .input-text {
-        height: 62px;
-        width: 100%;
+      i {
+        @include icon-textbox();
       }
     }
 
@@ -48,15 +27,46 @@
       position: relative;
       margin-right: 32px;
       i {
-        position: absolute;
-        font-size: 24px;
-        right: 16px;
-        top: 22px;
-        color: $secondary;
+        @include icon-textbox();
       }
-      select {
-        height: 62px;
-        width: 100%;
+    }
+
+    ::ng-deep {
+      .mat-form-field {
+        display: block !important;
+        &-flex {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border-radius: 8px;
+          background-color: $white;
+          border: 0px;
+          height: 62px;
+          padding-left: 16px;
+          padding-right: 50px;
+          color: $grey-200;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-indent: 1px;
+          text-overflow: "";
+        }
+
+        &-underline {
+          display: none;
+        }
+
+        .mat-select {
+          padding: 4px;
+        }
+
+        .mat-select-arrow {
+          color: transparent;
+        }
+
+        .mat-form-field-label {
+          padding-top: 10px;
+          font-size: 12px;
+        }
       }
     }
 

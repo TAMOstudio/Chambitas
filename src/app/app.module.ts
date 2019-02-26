@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from "./app.component";
+import { FormsModule } from "@angular/forms";
 
 /* Angular Material */
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -12,6 +13,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from "@angular/material/select";
 
 /*App components*/
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -56,6 +58,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -63,6 +66,7 @@ const appRoutes: Routes = [
     MatListModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSelectModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
