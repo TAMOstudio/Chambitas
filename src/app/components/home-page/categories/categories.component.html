@@ -2,13 +2,13 @@
   <div class="title">Categorias Populares</div>
   <div class="sub-title"></div>
   <div class="categories group">
-    <ng-container *ngFor="let category of categories; let i = index">
+    <ng-container *ngFor="let category of (categories$ | async); let i = index">
       <div class="category category-{{ i }}">
         <div class="category-body">
-          <i class="icon {{ category.icon }}"></i>
-          <div class="name">{{ category.name }}</div>
+          <i class="icon fas {{ category.icon }}"></i>
+          <div class="name">{{ category.label }}</div>
           <div class="businesses">
-            ({{ category.businesses.length }} negocios)
+            ({{ category.business.length }} negocios)
           </div>
         </div>
       </div>

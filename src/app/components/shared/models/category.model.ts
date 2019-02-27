@@ -6,4 +6,5 @@ export interface Category {
   name: string;
   businesses: Business[];
   order: number;
+  subCategories: Category[];
 }
