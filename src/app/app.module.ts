@@ -36,6 +36,7 @@ import { CategoriesPageComponent } from "./components/categories/categories-page
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from "src/environments/environment";
+import { CategoriesSharedComponent } from './components/shared/components/categories-shared/categories-shared.component';
 
 const appRoutes: Routes = [
   {
@@ -65,7 +66,8 @@ const appRoutes: Routes = [
     ContactComponent,
     MainSearchComponent,
     CategoriesComponent,
-    CategoriesPageComponent
+    CategoriesPageComponent,
+    CategoriesSharedComponent
   ],
   imports: [
     BrowserModule,
