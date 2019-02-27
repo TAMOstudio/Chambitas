@@ -4,7 +4,9 @@
       <div class="category-body">
         <i class="icon fas {{ category.icon }}"></i>
         <div class="name">{{ category.label }}</div>
-        <div class="businesses">({{ category.business.length }} negocios)</div>
+        <div *ngIf="category.name !== 'nuevacategoria'" class="businesses">
+          ({{ category.business.length }} negocios)
+        </div>
       </div>
     </div>
   </ng-container>

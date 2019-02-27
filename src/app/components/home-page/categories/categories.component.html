@@ -1,9 +1,9 @@
 <div class="container">
   <div class="title">Categorias Populares</div>
   <div class="sub-title"></div>
-  <app-categories-shared [categories]="categories"></app-categories-shared>
+  <app-categories-shared [categories]="categories$"></app-categories-shared>
   <div class="all-categories">
-    <a [routerLink]="['/categories']">
+    <a href="/categories">
       <button routerLink="">Todas Las Catergorias</button>
     </a>
   </div>

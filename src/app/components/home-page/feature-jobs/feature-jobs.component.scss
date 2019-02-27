@@ -133,6 +133,9 @@
 /*  GO FULL WIDTH BELOW 480 PIXELS */
 @media only screen and (max-width: 599px) {
   .container {
+    .title {
+      font-size: 32px;
+    }
     .chambeadores {
       display: block;
       height: 308px;

@@ -1,4 +1,10 @@
 @import "../../sass/variables";
+footer {
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
