@@ -1,0 +1,59 @@
+@import "../shared/sass/variables";
+@import "../shared/sass/mixins";
+
+.home {
+  color: $black;
+}
+
+.scroll-to {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  border: 2px solid $secondary;
+  margin-top: -64px;
+  z-index: 1;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  left: 50%;
+  margin-left: -65px;
+
+  a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    background: $white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $secondary;
+    font-size: 24px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    line-height: 60px;
+    &:hover {
+      color: $white;
+      background-color: $secondary;
+    }
+  }
+}

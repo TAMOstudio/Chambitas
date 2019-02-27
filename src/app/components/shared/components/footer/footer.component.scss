@@ -1,0 +1,52 @@
+@import "../../sass/variables";
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "contact-info FAQ business app-stores";
+  height: 240px;
+  padding: 84px;
+  background-color: $primary;
+  color: $grey-100;
+  font-size: 14px;
+}
+
+.contact-info {
+  grid-area: contact-info;
+}
+
+.FAQ {
+  grid-area: FAQ;
+}
+
+.business {
+  grid-area: business;
+}
+
+.app-stores {
+  grid-area: app-stores;
+}
+
+.logo,
+.address,
+.telephone,
+.email,
+.social-media {
+  display: block;
+  margin: 32px 0;
+}
+
+.social-media {
+  display: flex;
+  i {
+    margin-right: 16px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .grid-container {
+    display: block;
+    height: auto;
+  }
+}

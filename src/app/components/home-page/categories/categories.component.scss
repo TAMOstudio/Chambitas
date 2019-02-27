@@ -1,0 +1,23 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
+.title {
+  @include title();
+}
+
+a {
+  text-decoration: none;
+}
+
+.all-categories {
+  display: flex;
+  justify-content: center;
+  margin: 42px;
+  button {
+    @include medium-button($secondary);
+
+    &:hover {
+      @include button-hover-primary();
+    }
+  }
+}

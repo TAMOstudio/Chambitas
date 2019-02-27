@@ -1,0 +1,30 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+a {
+  text-decoration: none;
+  color: $white;
+  font-size: 14px;
+}
+
+ul {
+  list-style-type: none;
+  a {
+    text-decoration: none;
+    color: $white;
+    font-size: 14px;
+    width: 200px;
+    padding: 8px;
+    margin-right: 8px;
+
+    &:hover,
+    &:active {
+      color: white;
+      border-radius: 50px;
+      background-color: $secondary;
+    }
+  }
+
+  .logout {
+    cursor: pointer;
+  }
+}

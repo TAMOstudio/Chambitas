@@ -1,0 +1,125 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+  width: 100%;
+  form {
+    display: flex;
+    justify-content: center;
+    .search-text {
+      width: 600px;
+      margin-right: 32px;
+      position: relative;
+
+      input {
+        margin-top: 4px;
+      }
+      i {
+        @include icon-textbox();
+      }
+    }
+
+    .search-dropdown {
+      width: 300px;
+      position: relative;
+      margin-right: 32px;
+      i {
+        @include icon-textbox();
+      }
+    }
+
+    ::ng-deep {
+      .mat-form-field {
+        display: block !important;
+        &-flex {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border-radius: 8px;
+          background-color: $white;
+          border: 0px;
+          height: 62px;
+          padding-left: 16px;
+          padding-right: 50px;
+          color: $grey-200;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-indent: 1px;
+          text-overflow: "";
+        }
+
+        &-underline {
+          display: none;
+        }
+
+        .mat-select {
+          padding: 4px;
+        }
+
+        .mat-select-arrow {
+          color: transparent;
+        }
+
+        .mat-form-field-label {
+          padding-top: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .search-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: $white;
+      background-color: $third;
+      height: 62px;
+      width: 62px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondary;
+      }
+    }
+  }
+}
+.categories {
+  margin: 42px 0;
+  color: $white;
+  span {
+    padding: 8px;
+    border-radius: 50px;
+    border: 2px solid $secondary;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+@media only screen and (max-width: 599px) {
+  .container {
+    form {
+      display: block;
+      .search-text,
+      .search-dropdown {
+        width: 100%;
+      }
+
+      .search-btn {
+        display: none;
+      }
+    }
+  }
+}

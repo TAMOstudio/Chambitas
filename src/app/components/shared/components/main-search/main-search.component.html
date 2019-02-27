@@ -1,0 +1,41 @@
+<div class="container">
+  <form>
+    <div class="search-text">
+      <i class="far fa-keyboard"></i>
+      <!-- <input
+        type="text"
+        placeholder="Chambeador, etiquetas, ó servicio"
+        class="input-text"
+      /> -->
+      <mat-form-field class="example-form-field">
+        <input
+          matInput
+          type="text"
+          placeholder="Chambeador, etiquetas, ó categoria"
+          [(ngModel)]="selectedState"
+          name="keywords"
+        />
+      </mat-form-field>
+      <div class="categories">
+        <div class="search-categories">
+          <div class="label">
+            Buscar por
+            <a [routerLink]="['/categories']"><span>Categoría</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-dropdown">
+      <i class="fas fa-map-marker-alt"></i>
+      <mat-form-field>
+        <mat-select placeholder="Estado">
+          <mat-option>---</mat-option>
+          <mat-option *ngFor="let state of states" [value]="state.value">
+            {{ state.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="search-btn"><i class="fas fa-search"></i></div>
+  </form>
+</div>

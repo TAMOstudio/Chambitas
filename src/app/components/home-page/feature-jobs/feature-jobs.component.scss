@@ -1,0 +1,155 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
+.container {
+  margin: 42px 84px;
+  .title,
+  .sub-title {
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .title {
+    @include title();
+  }
+
+  .sub-title {
+    color: $grey-200;
+  }
+
+  .chambeadores-list {
+    margin: 42px 0;
+  }
+
+  .chambeadores {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo wrapper location reviews work-type";
+    height: 98px;
+    border-bottom: 1px solid $grey-100;
+    cursor: pointer;
+
+    &:hover {
+      @include light-shadow();
+      background-color: $white;
+      z-index: 10;
+      border-left: 4px solid $third;
+      overflow: hidden;
+      height: 94px;
+    }
+  }
+
+  .logo {
+    grid-area: logo;
+  }
+
+  .wrapper {
+    grid-area: wrapper;
+  }
+
+  .location {
+    grid-area: location;
+  }
+
+  .reviews {
+    grid-area: reviews;
+  }
+
+  .work-type {
+    grid-area: work-type;
+  }
+
+  .logo,
+  .wrapper,
+  .location,
+  .reviews {
+    margin: 24px;
+  }
+
+  .logo {
+    width: 98px;
+    height: 50px;
+  }
+  .wrapper {
+    .name {
+      font-weight: 700;
+    }
+    .services {
+      color: $secondary;
+      font-size: 12px;
+    }
+  }
+  .location {
+    color: $grey-200;
+    i {
+      margin: 0 8px;
+    }
+  }
+
+  .reviews {
+    i {
+      color: $yellow;
+    }
+  }
+
+  .work-type {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .full-time {
+      @include pill($green-100);
+    }
+
+    .part-time {
+      @include pill($third);
+    }
+
+    .temporary {
+      @include pill($secondary);
+    }
+
+    .flexible {
+      @include pill($blue-100);
+    }
+  }
+}
+
+.all-chambeadores {
+  display: flex;
+  justify-content: center;
+  margin: 42px;
+  button {
+    @include big-button();
+
+    &:hover {
+      @include button-hover-primary();
+    }
+  }
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 599px) {
+  .container {
+    .chambeadores {
+      display: block;
+      height: 308px;
+      &:hover {
+        height: 340px;
+      }
+    }
+    .logo,
+    .wrapper,
+    .location,
+    .reviews .work-type {
+      display: block;
+    }
+
+    .work-type {
+      margin: 24px;
+      display: block;
+    }
+  }
+}

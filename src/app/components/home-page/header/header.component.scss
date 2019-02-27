@@ -1,0 +1,24 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
+.banner {
+  @include banner("banner1.jpg");
+  height: 600px;
+  .title,
+  .sub-title {
+    @include title-sub-title();
+  }
+
+  .title {
+    @include title();
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .banner {
+    .title {
+      margin-top: 24px;
+      font-size: 36px;
+    }
+  }
+}

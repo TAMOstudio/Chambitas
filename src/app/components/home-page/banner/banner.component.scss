@@ -1,0 +1,33 @@
+@import "../../shared/sass/variables";
+@import "../../shared/sass/mixins";
+
+.banner {
+  margin: 42px 0;
+  height: 300px;
+  @include banner("banner2.jpg");
+  .title,
+  .sub-title {
+    @include title-sub-title();
+  }
+
+  .title {
+    @include title();
+  }
+  button {
+    @include medium-button($secondary);
+    color: $white;
+
+    &:hover {
+      @include button-hover-primary();
+    }
+  }
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 599px) {
+  .banner {
+    .title {
+      margin-top: 0;
+    }
+  }
+}
