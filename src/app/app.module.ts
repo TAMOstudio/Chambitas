@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from "./app.component";
 import { FormsModule } from "@angular/forms";
+import { FirestoreSettingsToken } from "@angular/fire/firestore";
 
 /* Angular Material */
 import { MatSidenavModule } from "@angular/material/sidenav";
@@ -29,6 +30,11 @@ import { NavbarComponent } from "./components/shared/components/navbar/navbar.co
 import { SidenavComponent } from "./components/shared/components/sidenav/sidenav.component";
 import { MainSearchComponent } from "./components/shared/components/main-search/main-search.component";
 import { CategoriesComponent } from "./components/home-page/categories/categories.component";
+
+/*Firebase*/
+import { AngularFireModule } from "angularfire2";
+import { AngularFirestoreModule } from "angularfire2/firestore";
+import { environment } from "src/environments/environment";
 
 const appRoutes: Routes = [
   {
@@ -67,9 +73,12 @@ const appRoutes: Routes = [
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
