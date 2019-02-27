@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Category } from "../../shared/models/category.model";
 import { CategoryService } from "../../shared/services/category.service";
 import { Observable } from "rxjs";
 
@@ -9,7 +8,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  categories: {}[];
+  categories$: {}[];
   constructor(private _categoryServices: CategoryService) {}
 
   ngOnInit() {
@@ -18,7 +17,7 @@ export class CategoriesComponent implements OnInit {
 
   populateCategories() {
     this._categoryServices.getCategoriesHomePage().subscribe(c => {
-      this.categories = c;
+      this.categories$ = c;
     });
   }
 }
