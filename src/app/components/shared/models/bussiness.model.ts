@@ -1,6 +1,8 @@
 import { Reviews } from "./reviews.model";
+import { Category } from "./category.model";
 
 export interface Business {
+  businessUid: string;
   name: string;
   logo: string;
   imageGallery: string;
@@ -23,4 +25,5 @@ export interface Business {
   membershipPaid: boolean;
   membershipType: string;
   workType: string;
+  category: Category;
 }
