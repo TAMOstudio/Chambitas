@@ -1,20 +1,10 @@
 <div class="container">
   <div class="title">Categorias Populares</div>
   <div class="sub-title"></div>
-  <div class="categories group">
-    <ng-container *ngFor="let category of (categories$ | async); let i = index">
-      <div class="category category-{{ i }}">
-        <div class="category-body">
-          <i class="icon fas {{ category.icon }}"></i>
-          <div class="name">{{ category.label }}</div>
-          <div class="businesses">
-            ({{ category.business.length }} negocios)
-          </div>
-        </div>
-      </div>
-    </ng-container>
-  </div>
+  <app-categories-shared [categories]="categories"></app-categories-shared>
   <div class="all-categories">
-    <button>Todas Las Catergorias</button>
+    <a [routerLink]="['/categories']">
+      <button routerLink="">Todas Las Catergorias</button>
+    </a>
   </div>
 </div>

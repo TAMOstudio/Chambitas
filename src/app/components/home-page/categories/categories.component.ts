@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./categories.component.scss"]
 })
 export class CategoriesComponent implements OnInit {
-  categories$: Observable<{}>;
+  categories: {}[];
   constructor(private _categoryServices: CategoryService) {}
 
   ngOnInit() {
@@ -17,6 +17,8 @@ export class CategoriesComponent implements OnInit {
   }
 
   populateCategories() {
-    this.categories$ = this._categoryServices.getCategoriesHomePage();
+    this._categoryServices.getCategoriesHomePage().subscribe(c => {
+      this.categories = c;
+    });
   }
 }
