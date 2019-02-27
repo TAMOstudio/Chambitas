@@ -30,6 +30,7 @@ import { NavbarComponent } from "./components/shared/components/navbar/navbar.co
 import { SidenavComponent } from "./components/shared/components/sidenav/sidenav.component";
 import { MainSearchComponent } from "./components/shared/components/main-search/main-search.component";
 import { CategoriesComponent } from "./components/home-page/categories/categories.component";
+import { CategoriesPageComponent } from "./components/categories/categories-page/categories-page.component";
 
 /*Firebase*/
 import { AngularFireModule } from "angularfire2";
@@ -40,6 +41,10 @@ const appRoutes: Routes = [
   {
     path: "",
     component: HomePageComponent
+  },
+  {
+    path: "categories",
+    component: CategoriesPageComponent
   }
 ];
 
@@ -59,7 +64,8 @@ const appRoutes: Routes = [
     ReviewsComponent,
     ContactComponent,
     MainSearchComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CategoriesPageComponent
   ],
   imports: [
     BrowserModule,
