@@ -16,7 +16,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(63, 81, 181, 0.8)
     ),
-    url("../../../../assets/"+$image);
+    url("/../../../../assets/"+$image);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
