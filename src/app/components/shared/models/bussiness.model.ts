@@ -5,12 +5,13 @@ export interface Business {
   businessUid: string;
   name: string;
   logo: string;
-  imageGallery: string;
+  imageGallery: string[];
   numberOfEmployees: number;
   website: string;
   address: string;
   zipCode: number;
   state: string;
+  city: string;
   country: string;
   latitude: number;
   longitute: number;
@@ -26,4 +27,5 @@ export interface Business {
   membershipType: string;
   workType: string;
   category: Category;
+  reviewsTotal: number;
 }
