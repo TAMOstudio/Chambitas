@@ -9,7 +9,6 @@ import { Business } from "../shared/models/bussiness.model";
 export class ResultsPageComponent implements OnInit {
   workTypes: string[];
   selectedWT: string[];
-  selectedStars: number[];
   results: Business[];
   constructor() {}
 
@@ -20,9 +19,5 @@ export class ResultsPageComponent implements OnInit {
       "Medio Tiempo",
       "Tiempo Completo"
     ];
-  }
-
-  onNgModelChange(event) {
-    console.log(this.selectedStars);
   }
 }

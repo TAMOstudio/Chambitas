@@ -1,3 +1,17 @@
-<p>
-  work-type-filter works!
-</p>
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Tipo de Trabajo
+      </mat-panel-title>
+      <mat-panel-description>
+        <mat-icon>add</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-selection-list [(ngModel)]="selectedWT">
+      <mat-list-option *ngFor="let wt of workTypes" [value]="wt">
+        <span class="pill">{{ wt }}</span>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>
+</mat-accordion>

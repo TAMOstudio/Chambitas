@@ -1,0 +1,12 @@
+::ng-deep {
+  mat-panel-description {
+    position: relative;
+    mat-icon {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+}

@@ -3,100 +3,10 @@
 </div>
 <div class="results">
   <div class="filters">
-    <mat-accordion class="example-headers-align">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Tipo de Trabajo
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon>add</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-selection-list [(ngModel)]="selectedWT">
-          <mat-list-option *ngFor="let wt of workTypes" [value]="wt">
-            <span class="pill">{{ wt }}</span>
-          </mat-list-option>
-        </mat-selection-list>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion class="example-headers-align">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Reviews
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon>add</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-selection-list
-          [(ngModel)]="selectedStars"
-          (ngModelChange)="onNgModelChange($event)"
-        >
-          <mat-list-option [value]="5">
-            <span class="stars">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </mat-list-option>
-          <mat-list-option [value]="4">
-            <span class="stars">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </mat-list-option>
-          <mat-list-option [value]="3">
-            <span class="stars">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </mat-list-option>
-          <mat-list-option [value]="2">
-            <span class="stars">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-            </span>
-          </mat-list-option>
-          <mat-list-option [value]="1">
-            <span class="stars">
-              <i class="far fa-star"></i>
-            </span>
-          </mat-list-option>
-        </mat-selection-list>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion class="example-headers-align">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Categoria
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon>add</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion class="example-headers-align">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Etiquetas
-          </mat-panel-title>
-          <mat-panel-description>
-            <mat-icon>add</mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-      </mat-expansion-panel>
-    </mat-accordion>
+    <app-work-type-filter></app-work-type-filter>
+    <app-reviews-filter></app-reviews-filter>
+    <app-category-filter></app-category-filter>
+    <app-tags-filter></app-tags-filter>
   </div>
-
   <div class="chambeadores"></div>
 </div>
