@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Worktype } from "src/app/components/shared/models/worktype.model";
 
 @Component({
   selector: "app-work-type-filter",
@@ -6,16 +7,28 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./work-type-filter.component.scss"]
 })
 export class WorkTypeFilterComponent implements OnInit {
-  workTypes: string[];
+  workTypes: Worktype[];
   selectedWT: string[];
   constructor() {}
 
   ngOnInit() {
     this.workTypes = [
-      "Temporal",
-      "Flexible",
-      "Medio Tiempo",
-      "Tiempo Completo"
+      {
+        name: "Temporal",
+        className: "temporary"
+      },
+      {
+        name: "Flexible",
+        className: "flexible"
+      },
+      {
+        name: "Medio Tiempo",
+        className: "part-time"
+      },
+      {
+        name: "Tiempo Completo",
+        className: "full-time"
+      }
     ];
   }
 }

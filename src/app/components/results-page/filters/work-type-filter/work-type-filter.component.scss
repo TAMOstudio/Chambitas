@@ -1,3 +1,5 @@
+@import "../../../shared/sass/variables";
+@import "../../../shared/sass/mixins";
 ::ng-deep {
   mat-panel-description {
     position: relative;
@@ -6,7 +8,43 @@
       right: 0;
     }
   }
+  .mat-expansion-panel {
+    @include mat-expansion-panel();
+  }
 }
+
 .mat-expansion-panel:not([class*="mat-elevation-z"]) {
   box-shadow: none;
+}
+
+.pill-filter {
+  font-size: 14px !important;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 118px;
+  padding: 8px 34px !important;
+}
+.full-time {
+  @include pill($green-100);
+}
+
+.part-time {
+  @include pill($third);
+}
+
+.temporary {
+  @include pill($secondary);
+}
+
+.flexible {
+  @include pill($blue-100);
+}
+
+.mat-list-option:focus,
+.mat-list-option:hover,
+.mat-nav-list .mat-list-item:focus,
+.mat-nav-list .mat-list-item:hover {
+  background: none;
 }
