@@ -15,6 +15,8 @@ import { MatListModule } from "@angular/material/list";
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
+import { MatTableModule } from "@angular/material";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 /*App components*/
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -31,13 +33,14 @@ import { SidenavComponent } from "./components/shared/components/sidenav/sidenav
 import { MainSearchComponent } from "./components/shared/components/main-search/main-search.component";
 import { CategoriesComponent } from "./components/home-page/categories/categories.component";
 import { CategoriesPageComponent } from "./components/categories-page/categories-page.component";
+import { CategoriesSharedComponent } from "./components/shared/components/categories-shared/categories-shared.component";
+import { ResultsPageComponent } from "./components/results-page/results-page.component";
 
 /*Firebase*/
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from "src/environments/environment";
-import { CategoriesSharedComponent } from "./components/shared/components/categories-shared/categories-shared.component";
-import { ResultsPageComponent } from './components/results-page/results-page.component';
+import { WorkTypeFilterComponent } from './components/results-page/filters/work-type-filter/work-type-filter.component';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +50,10 @@ const appRoutes: Routes = [
   {
     path: "categories",
     component: CategoriesPageComponent
+  },
+  {
+    path: "results",
+    component: ResultsPageComponent
   }
 ];
 
@@ -69,7 +76,8 @@ const appRoutes: Routes = [
     CategoriesComponent,
     CategoriesPageComponent,
     CategoriesSharedComponent,
-    ResultsPageComponent
+    ResultsPageComponent,
+    WorkTypeFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +90,9 @@ const appRoutes: Routes = [
     MatListModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTableModule,
     MatSelectModule,
+    MatExpansionModule,
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
