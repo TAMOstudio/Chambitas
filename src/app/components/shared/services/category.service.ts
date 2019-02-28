@@ -1,10 +1,6 @@
 import { Injectable } from "@angular/core";
-import {
-  AngularFirestore,
-  AngularFirestoreCollection
-} from "angularfire2/firestore";
+import { AngularFirestore } from "angularfire2/firestore";
 import { Category } from "../models/category.model";
-import { Observable } from "rxjs";
 @Injectable({
   providedIn: "root"
 })
