@@ -43,6 +43,7 @@ import { environment } from "src/environments/environment";
 import { WorkTypeFilterComponent } from './components/results-page/filters/work-type-filter/work-type-filter.component';
 import { ReviewsFilterComponent } from './components/results-page/filters/reviews-filter/reviews-filter.component';
 import { CategoryFilterComponent } from './components/results-page/filters/category-filter/category-filter.component';
+import { TagsFilterComponent } from './components/results-page/filters/tags-filter/tags-filter.component';
 
 const appRoutes: Routes = [
   {
@@ -81,7 +82,8 @@ const appRoutes: Routes = [
     ResultsPageComponent,
     WorkTypeFilterComponent,
     ReviewsFilterComponent,
-    CategoryFilterComponent
+    CategoryFilterComponent,
+    TagsFilterComponent
   ],
   imports: [
     BrowserModule,
