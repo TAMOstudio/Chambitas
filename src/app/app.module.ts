@@ -42,6 +42,7 @@ import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from "src/environments/environment";
 import { WorkTypeFilterComponent } from './components/results-page/filters/work-type-filter/work-type-filter.component';
 import { ReviewsFilterComponent } from './components/results-page/filters/reviews-filter/reviews-filter.component';
+import { CategoryFilterComponent } from './components/results-page/filters/category-filter/category-filter.component';
 
 const appRoutes: Routes = [
   {
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
     CategoriesSharedComponent,
     ResultsPageComponent,
     WorkTypeFilterComponent,
-    ReviewsFilterComponent
+    ReviewsFilterComponent,
+    CategoryFilterComponent
   ],
   imports: [
     BrowserModule,
