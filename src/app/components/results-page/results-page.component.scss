@@ -1,0 +1,63 @@
+@import "../shared/sass/variables";
+@import "../shared/sass/mixins";
+
+.banner {
+  @include banner("banner1.jpg");
+  height: 200px;
+}
+
+.title,
+.sub-title {
+  @include title-sub-title();
+}
+
+.title {
+  @include title();
+  color: $black;
+}
+
+.results {
+  min-height: 100vh;
+  margin: 42px 240px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "filters chambeadores";
+}
+
+.filters {
+  grid-area: filters;
+  ::ng-deep {
+    mat-panel-description {
+      position: relative;
+      mat-icon {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+  .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+    box-shadow: none;
+  }
+}
+
+.chambeadores {
+  grid-area: chambeadores;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 599px) {
+  .title {
+    margin-top: 24px;
+    font-size: 36px;
+  }
+}
