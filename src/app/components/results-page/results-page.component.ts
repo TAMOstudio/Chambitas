@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ResultsService } from "../shared/services/results.service";
+import { Observable } from "rxjs";
 import { Business } from "../shared/models/bussiness.model";
 
 @Component({
@@ -7,17 +9,19 @@ import { Business } from "../shared/models/bussiness.model";
   styleUrls: ["./results-page.component.scss"]
 })
 export class ResultsPageComponent implements OnInit {
-  workTypes: string[];
-  selectedWT: string[];
-  results: Business[];
-  constructor() {}
+  results$: Observable<{}[]>;
+  constructor(private _resultsService: ResultsService) {}
 
   ngOnInit() {
-    this.workTypes = [
-      "Temporal",
-      "Flexible",
-      "Medio Tiempo",
-      "Tiempo Completo"
-    ];
+    //this.populateResults();
+    this.populateQueriedResults();
+  }
+
+  populateResults() {
+    this.results$ = this._resultsService.getAllResults();
+  }
+
+  populateQueriedResults() {
+    this.results$ = this._resultsService.getResultsByQuery();
   }
 }

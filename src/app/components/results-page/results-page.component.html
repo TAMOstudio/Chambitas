@@ -8,5 +8,7 @@
     <app-category-filter></app-category-filter>
     <app-tags-filter></app-tags-filter>
   </div>
-  <div class="chambeadores"></div>
+  <div class="chambeadores">
+    {{ results$ | async | json }}
+  </div>
 </div>
