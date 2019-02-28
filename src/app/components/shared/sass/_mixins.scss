@@ -82,3 +82,11 @@
   color: $secondary;
   z-index: 1;
 }
+
+//Material
+
+//Expan panel
+
+@mixin mat-expansion-panel() {
+  background: none;
+}
