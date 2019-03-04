@@ -23,48 +23,40 @@ export class ResultsService {
   }
 
   getResultsByQueries(
-    filterTime: any[],
-    filterReviews: any[],
-    filtersCategories: any[],
-    filterServices: any[],
-    results: any[]
+    filterTime: string[],
+    filterReviews: number[],
+    filterCategories: string[],
+    filterServices: string[],
+    results: Business[]
   ) {
     const SEARCH_ARRAY = [
       ...filterTime,
       ...filterReviews,
-      ...filtersCategories,
+      ...filterCategories,
       ...filterServices
     ];
     const BUSINESSES = results;
 
-    let RESULTS = [];
-    //console.log(SEARCH_ARRAY);
-    filterTime.map(v => {
-      RESULTS = BUSINESSES.filter(b => {
-        return (
-          b.workType === v
+    // return BUSINESSES.filter(b => {
+    //   return filterTime.includes(b.workType);
+    // })
+    //   .filter(b => {
+    //     return filterReviews.includes(b.reviewsTotal);
+    //   })
+    //   .filter(b => {
+    //     return filterCategories.includes(b.category);
+    //   })
+    //   .filter(b => {
+    //     return filterServices.includes(b.service);
+    //   });
 
-          // (b.reviewsTotal === v.reviewsTotal || v.reviewsTotal === undefined)
-          // (b.categories.includes(v.category) || v.category === undefined) &&
-          // (b.servicesOffered.includes(v.service) || b.service === undefined)
-        );
-      });
+    return BUSINESSES.filter(b => {
+      return (
+        filterTime.includes(b.workType) &&
+        filterReviews.includes(b.reviewsTotal) &&
+        filterCategories.includes(b.category) &&
+        filterServices.includes(b.service)
+      );
     });
-    console.log(RESULTS);
-
-    RESULTS = RESULTS.filter(b => {
-      filterReviews.map(v => {
-        console.log(v, b.reviewsTotal);
-        return (
-          b.reviewsTotal === v
-
-          // (b.reviewsTotal === v.reviewsTotal || v.reviewsTotal === undefined)
-          // (b.categories.includes(v.category) || v.category === undefined) &&
-          // (b.servicesOffered.includes(v.service) || b.service === undefined)
-        );
-      });
-    });
-
-    return RESULTS;
   }
 }

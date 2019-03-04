@@ -30,9 +30,9 @@ export class ResultsPageComponent implements OnInit {
       console.log(
         this._resultsService.getResultsByQueries(
           ["Tiempo Completo", "Flexible"],
-          [5, 4],
-          [],
-          [],
+          [5, 4, 3],
+          ["legal"],
+          ["nada"],
           r
         )
       );

@@ -29,4 +29,6 @@ export interface Business {
   categories: string[];
   categoriesInfo: Category[];
   reviewsTotal: number;
+  category: string;
+  service: string;
 }
