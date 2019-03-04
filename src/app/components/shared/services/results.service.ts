@@ -39,27 +39,32 @@ export class ResultsService {
 
     let RESULTS = [];
     //console.log(SEARCH_ARRAY);
+    filterTime.map(v => {
+      RESULTS = BUSINESSES.filter(b => {
+        return (
+          b.workType === v
 
-    return BUSINESSES.filter(b => {
-      return SEARCH_ARRAY.map(v => {
-        if (
-          b.workType === v.workType ||
-          v.workType === undefined ||
-          (b.reviewsTotal === v.reviewsTotal || v.reviewsTotal === undefined)
+          // (b.reviewsTotal === v.reviewsTotal || v.reviewsTotal === undefined)
           // (b.categories.includes(v.category) || v.category === undefined) &&
           // (b.servicesOffered.includes(v.service) || b.service === undefined)
-        ) {
-          b.filtered = true;
-          return b;
-        } else {
-          b.filtered = false;
-          return b;
-        }
+        );
       });
-    }).filter(b => {
-      return b.filtered === true;
+    });
+    console.log(RESULTS);
+
+    RESULTS = RESULTS.filter(b => {
+      filterReviews.map(v => {
+        console.log(v, b.reviewsTotal);
+        return (
+          b.reviewsTotal === v
+
+          // (b.reviewsTotal === v.reviewsTotal || v.reviewsTotal === undefined)
+          // (b.categories.includes(v.category) || v.category === undefined) &&
+          // (b.servicesOffered.includes(v.service) || b.service === undefined)
+        );
+      });
     });
 
-    // return BUSINESSES
+    return RESULTS;
   }
 }

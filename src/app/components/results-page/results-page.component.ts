@@ -29,8 +29,8 @@ export class ResultsPageComponent implements OnInit {
     this.filter$.subscribe(r => {
       console.log(
         this._resultsService.getResultsByQueries(
-          [{ workType: "Tiempo Completo" }, { workType: "Flexible" }],
-          [{ reviewsTotal: 5 }, { reviewsTotal: 3 }],
+          ["Tiempo Completo", "Flexible"],
+          [5, 4],
           [],
           [],
           r
