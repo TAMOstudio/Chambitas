@@ -16,11 +16,20 @@
   color: $black;
 }
 
+.spinner {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 24px;
+  margin: 24px;
+}
+
 .results {
   min-height: 100vh;
-  margin: 42px 240px;
+  margin: 42px 120px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 25% 75%;
   grid-template-rows: 1fr;
   grid-template-areas: "filters chambeadores";
 }
@@ -35,17 +44,13 @@
   grid-area: chambeadores;
 }
 
-.example-headers-align .mat-expansion-panel-header-title,
-.example-headers-align .mat-expansion-panel-header-description {
-  flex-basis: 0;
-}
-
-.example-headers-align .mat-expansion-panel-header-description {
-  justify-content: space-between;
-  align-items: center;
-}
-
 @media only screen and (max-width: 599px) {
+  .banner {
+    height: 248px;
+    .container {
+      margin-top: 0;
+    }
+  }
   .title {
     margin-top: 24px;
     font-size: 36px;

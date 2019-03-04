@@ -26,6 +26,7 @@ export interface Business {
   membershipPaid: boolean;
   membershipType: string;
   workType: string;
-  category: Category;
+  categories: string[];
+  categoriesInfo: Category[];
   reviewsTotal: number;
 }

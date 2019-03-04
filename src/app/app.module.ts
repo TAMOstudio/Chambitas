@@ -17,6 +17,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
 import { MatTableModule } from "@angular/material";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 /*App components*/
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -40,10 +41,11 @@ import { ResultsPageComponent } from "./components/results-page/results-page.com
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule } from "angularfire2/firestore";
 import { environment } from "src/environments/environment";
-import { WorkTypeFilterComponent } from './components/results-page/filters/work-type-filter/work-type-filter.component';
-import { ReviewsFilterComponent } from './components/results-page/filters/reviews-filter/reviews-filter.component';
-import { CategoryFilterComponent } from './components/results-page/filters/category-filter/category-filter.component';
-import { TagsFilterComponent } from './components/results-page/filters/tags-filter/tags-filter.component';
+import { WorkTypeFilterComponent } from "./components/results-page/filters/work-type-filter/work-type-filter.component";
+import { ReviewsFilterComponent } from "./components/results-page/filters/reviews-filter/reviews-filter.component";
+import { CategoryFilterComponent } from "./components/results-page/filters/category-filter/category-filter.component";
+import { TagsFilterComponent } from "./components/results-page/filters/tags-filter/tags-filter.component";
+import { BusinessResultsComponent } from "./components/shared/components/business-results/business-results.component";
 
 const appRoutes: Routes = [
   {
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     WorkTypeFilterComponent,
     ReviewsFilterComponent,
     CategoryFilterComponent,
-    TagsFilterComponent
+    TagsFilterComponent,
+    BusinessResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +94,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatSidenavModule,
     MatToolbarModule,
+    MatProgressSpinnerModule,
     MatIconModule,
     FlexLayoutModule,
     MatListModule,

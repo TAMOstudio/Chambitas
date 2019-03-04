@@ -1,0 +1,180 @@
+@import "./../../sass/variables";
+@import "./../../sass/mixins";
+
+.chambeador {
+  height: 140px;
+  border-bottom: 1px solid $grey-100;
+  cursor: pointer;
+  &:hover {
+    @include light-shadow();
+    background-color: $white;
+    z-index: 10;
+    border-left: 4px solid $third;
+    overflow: hidden;
+    height: auto;
+  }
+}
+
+.main-info {
+  display: grid;
+  grid-template-columns: 8% 25% 20% 22% 25%;
+  grid-template-rows: 1fr;
+  grid-template-areas: "business-pic business-info location reviews  work-type" " . . . . ." " . . . . .";
+  padding: 16px 24px;
+}
+
+.work-type,
+.business-info,
+.location,
+.reviews {
+  margin: auto;
+  font-size: 14px;
+}
+
+.business-pic {
+  grid-area: business-pic;
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+}
+
+.business-info {
+  grid-area: business-info;
+  .business-title {
+    font-weight: 700;
+  }
+
+  .telephone {
+    color: $secondary;
+    font-size: 12px;
+  }
+}
+
+.location {
+  grid-area: location;
+  display: flex;
+  color: $grey-200;
+  i {
+    margin: 0 4px;
+  }
+}
+
+.reviews {
+  grid-area: reviews;
+  color: $yellow;
+}
+
+.work-type {
+  grid-area: work-type;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .full-time {
+    @include pill($green-100);
+  }
+
+  .part-time {
+    @include pill($third);
+  }
+
+  .temporary {
+    @include pill($secondary);
+  }
+
+  .flexible {
+    @include pill($blue-100);
+  }
+
+  .pill {
+    min-width: 118px;
+  }
+}
+
+.services {
+  margin-bottom: 16px;
+  padding: 0 24px;
+  font-size: 12px;
+  &-title {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .list-services {
+    display: flex;
+    .service {
+      @include pill($primary);
+      min-width: auto;
+      padding: 8px;
+      background-color: $primary;
+      color: white;
+    }
+  }
+
+  .service:not(:last-child) {
+    margin-right: 2px;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .banner {
+    height: 248px;
+    .container {
+      margin-top: 0;
+    }
+  }
+  .title {
+    margin-top: 24px;
+    font-size: 36px;
+  }
+
+  .results {
+    margin: 42px;
+    display: block;
+  }
+
+  .filters {
+    width: 100%;
+    border-right: 0;
+  }
+
+  .chambeador {
+    display: block;
+    height: auto;
+    padding: 16px 0;
+    &:hover {
+      height: auto;
+    }
+
+    .main-info {
+      display: block;
+      text-align: center;
+      padding-top: 0;
+      div:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      .location {
+        justify-content: center;
+      }
+    }
+
+    .services {
+      padding: 0;
+      justify-content: space-around;
+      display: flex;
+      &-title {
+        display: none;
+      }
+
+      .service {
+        max-width: 244px;
+        @include pill($primary);
+        min-width: auto;
+        padding: 8px;
+        background-color: $primary;
+        color: white;
+      }
+    }
+  }
+}

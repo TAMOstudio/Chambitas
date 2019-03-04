@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ResultsService } from "../shared/services/results.service";
 import { Observable } from "rxjs";
 import { Business } from "../shared/models/bussiness.model";
+import { take, finalize } from "rxjs/operators";
 
 @Component({
   selector: "app-results-page",
@@ -9,7 +10,8 @@ import { Business } from "../shared/models/bussiness.model";
   styleUrls: ["./results-page.component.scss"]
 })
 export class ResultsPageComponent implements OnInit {
-  results$: Observable<{}[]>;
+  results$: Observable<Business[]>;
+  filter$: Observable<Business[]>;
   constructor(private _resultsService: ResultsService) {}
 
   ngOnInit() {
@@ -22,6 +24,18 @@ export class ResultsPageComponent implements OnInit {
   }
 
   populateQueriedResults() {
-    this.results$ = this._resultsService.getResultsByQuery();
+    this.results$ = this._resultsService.getResultsByMainQuery();
+    this.filter$ = this.results$;
+    this.filter$.subscribe(r => {
+      console.log(
+        this._resultsService.getResultsByQueries(
+          [{ workType: "Tiempo Completo" }, { workType: "Flexible" }],
+          [{ reviewsTotal: 5 }, { reviewsTotal: 3 }],
+          [],
+          [],
+          r
+        )
+      );
+    });
   }
 }

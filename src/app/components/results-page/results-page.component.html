@@ -1,14 +1,22 @@
 <div class="banner">
   <app-main-search></app-main-search>
 </div>
-<div class="results">
-  <div class="filters">
-    <app-work-type-filter></app-work-type-filter>
-    <app-reviews-filter></app-reviews-filter>
-    <app-category-filter></app-category-filter>
-    <app-tags-filter></app-tags-filter>
+{{ results$ | async | json }}
+<ng-container *ngIf="results$; else spinner">
+  <div class="results">
+    <div class="filters">
+      <app-work-type-filter></app-work-type-filter>
+      <app-reviews-filter></app-reviews-filter>
+      <app-category-filter></app-category-filter>
+      <app-tags-filter></app-tags-filter>
+    </div>
+    <div class="chambeadores">
+      <app-business-results [results$]="results$"></app-business-results>
+    </div>
   </div>
-  <div class="chambeadores">
-    {{ results$ | async | json }}
+</ng-container>
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner></mat-spinner>
   </div>
-</div>
+</ng-template>

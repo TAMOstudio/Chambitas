@@ -1,0 +1,37 @@
+<div class="chambeador" *ngFor="let c of (results$ | async)">
+  <div class="main-info">
+    <div class="business-pic">
+      <img src="{{ c.logo }}" alt="" />
+    </div>
+    <div class="business-info">
+      <div class="business-title">{{ c.name }}</div>
+      <div class="telephone">
+        {{ c.phoneNumber }}
+      </div>
+    </div>
+    <div class="location">
+      <i class="fas fa-map-marker-alt"></i>
+      <div class="city">{{ c.city }}</div>
+      <div class="state">&nbsp; {{ c.state }}</div>
+    </div>
+    <div class="reviews">
+      <i
+        class="far fa-star"
+        *ngFor="let x of createReviews(c.reviewsTotal)"
+      ></i>
+    </div>
+    <div class="work-type">
+      <span class="pill {{ getWorkType(c.workType) }}">
+        {{ c.workType }}
+      </span>
+    </div>
+  </div>
+  <div class="services">
+    <span class="services-title">Services</span>
+    <div class="list-services">
+      <span class="service" *ngFor="let s of c.servicesOffered">
+        {{ s }}
+      </span>
+    </div>
+  </div>
+</div>
