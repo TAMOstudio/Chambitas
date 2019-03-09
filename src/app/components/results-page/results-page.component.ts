@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ResultsService } from "../shared/services/results.service";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { Business } from "../shared/models/bussiness.model";
-import { take, finalize } from "rxjs/operators";
 
 @Component({
   selector: "app-results-page",
@@ -14,28 +13,19 @@ export class ResultsPageComponent implements OnInit {
   filter$: Observable<Business[]>;
   constructor(private _resultsService: ResultsService) {}
 
-  ngOnInit() {
-    //this.populateResults();
+  ngOnInit(): void {
     this.populateQueriedResults();
   }
 
-  populateResults() {
+  populateResults(): void {
     this.results$ = this._resultsService.getAllResults();
   }
 
-  populateQueriedResults() {
+  populateQueriedResults(): void {
     this.results$ = this._resultsService.getResultsByMainQuery();
-    this.filter$ = this.results$;
-    this.filter$.subscribe(r => {
-      console.log(
-        this._resultsService.getResultsByQueries(
-          ["Tiempo Completo", "Flexible"],
-          [5, 4, 3],
-          ["legal"],
-          ["nada"],
-          r
-        )
-      );
+    this.results$.subscribe(res => {
+      this._resultsService.assingResults([], [], [], [], res);
+      this.filter$ = this._resultsService.resultsData;
     });
   }
 }
