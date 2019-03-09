@@ -10,7 +10,6 @@ export class WorkTypeFilterComponent implements OnInit {
   @Output()
   selectedWTEmitter = new EventEmitter<string[]>();
   selectedWT: string[];
-
   workTypes: Worktype[];
 
   constructor() {}

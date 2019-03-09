@@ -28,22 +28,24 @@ export class CategoryFiltersComponent implements OnInit {
     switch (filter) {
       case "time": {
         this.filterTime = event;
+        console.log(this.filterTime);
         this.callServiceToFilterResults();
         break;
       }
       case "reviews": {
-        this.callServiceToFilterResults();
+        console.log(this.filterReviews);
         this.filterReviews = event;
+        this.callServiceToFilterResults();
         break;
       }
       case "category": {
-        this.callServiceToFilterResults();
         this.filterCategories = event;
+        this.callServiceToFilterResults();
         break;
       }
       case "services": {
-        this.callServiceToFilterResults();
         this.filterServices = event;
+        this.callServiceToFilterResults();
         break;
       }
       default: {

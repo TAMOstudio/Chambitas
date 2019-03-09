@@ -8,11 +8,8 @@
         <mat-icon>add</mat-icon>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-selection-list
-      [(ngModel)]="selectedStars"
-      (ngModelChange)="onNgModelChange($event)"
-    >
-      <mat-list-option [value]="5">
+    <mat-selection-list [(ngModel)]="selectedStars">
+      <mat-list-option [value]="5" (click)="filterWorkTypes()">
         <span class="stars">
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
@@ -21,7 +18,7 @@
           <i class="far fa-star"></i>
         </span>
       </mat-list-option>
-      <mat-list-option [value]="4">
+      <mat-list-option [value]="4" (click)="filterWorkTypes()">
         <span class="stars">
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
@@ -29,20 +26,20 @@
           <i class="far fa-star"></i>
         </span>
       </mat-list-option>
-      <mat-list-option [value]="3">
+      <mat-list-option [value]="3" (click)="filterWorkTypes()">
         <span class="stars">
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         </span>
       </mat-list-option>
-      <mat-list-option [value]="2">
+      <mat-list-option [value]="2" (click)="filterWorkTypes()">
         <span class="stars">
           <i class="far fa-star"></i>
           <i class="far fa-star"></i>
         </span>
       </mat-list-option>
-      <mat-list-option [value]="1">
+      <mat-list-option [value]="1" (click)="filterWorkTypes()">
         <span class="stars">
           <i class="far fa-star"></i>
         </span>
