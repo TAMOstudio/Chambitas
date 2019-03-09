@@ -1,0 +1,12 @@
+<app-work-type-filter
+  (selectedWTEmitter)="filterResults($event, 'time')"
+></app-work-type-filter>
+<app-reviews-filter
+  (filterReviews)="filterResults($event, 'reviews')"
+></app-reviews-filter>
+<app-category-filter
+  (filterCategory)="filterResults($event, 'category')"
+></app-category-filter>
+<app-tags-filter
+  (filterServices)="filterResults($event, 'services')"
+></app-tags-filter>

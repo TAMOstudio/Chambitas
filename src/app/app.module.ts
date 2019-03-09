@@ -46,6 +46,7 @@ import { ReviewsFilterComponent } from "./components/results-page/filters/review
 import { CategoryFilterComponent } from "./components/results-page/filters/category-filter/category-filter.component";
 import { TagsFilterComponent } from "./components/results-page/filters/tags-filter/tags-filter.component";
 import { BusinessResultsComponent } from "./components/shared/components/business-results/business-results.component";
+import { CategoryFiltersComponent } from './components/shared/components/category-filters/category-filters.component';
 
 const appRoutes: Routes = [
   {
@@ -86,7 +87,8 @@ const appRoutes: Routes = [
     ReviewsFilterComponent,
     CategoryFilterComponent,
     TagsFilterComponent,
-    BusinessResultsComponent
+    BusinessResultsComponent,
+    CategoryFiltersComponent
   ],
   imports: [
     BrowserModule,
