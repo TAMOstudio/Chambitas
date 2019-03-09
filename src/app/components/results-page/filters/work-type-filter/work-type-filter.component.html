@@ -9,7 +9,11 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-selection-list [(ngModel)]="selectedWT">
-      <mat-list-option *ngFor="let wt of workTypes" [value]="wt.name">
+      <mat-list-option
+        *ngFor="let wt of workTypes"
+        [value]="wt.name"
+        (click)="filterWorkTypes()"
+      >
         <span class="pill-filter {{ wt.className }}">{{ wt.name }}</span>
       </mat-list-option>
     </mat-selection-list>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { Worktype } from "src/app/components/shared/models/worktype.model";
 
 @Component({
@@ -7,8 +7,12 @@ import { Worktype } from "src/app/components/shared/models/worktype.model";
   styleUrls: ["./work-type-filter.component.scss"]
 })
 export class WorkTypeFilterComponent implements OnInit {
-  workTypes: Worktype[];
+  @Output()
+  selectedWTEmitter = new EventEmitter<string[]>();
   selectedWT: string[];
+
+  workTypes: Worktype[];
+
   constructor() {}
 
   ngOnInit() {
@@ -30,5 +34,10 @@ export class WorkTypeFilterComponent implements OnInit {
         className: "full-time"
       }
     ];
+  }
+
+  filterWorkTypes() {
+    console.log("event emitter");
+    this.selectedWTEmitter.emit(this.selectedWT);
   }
 }
