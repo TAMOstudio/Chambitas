@@ -10,5 +10,5 @@
 <app-tags-filter
   *ngIf="servicesTags.length > 0"
   [servicesTags]="servicesTags"
-  (filterServices)="filterResults($event, 'services')"
+  (selectedTagsEmitter)="filterResults($event, 'services')"
 ></app-tags-filter>

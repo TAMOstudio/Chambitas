@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, EventEmitter, Output } from "@angular/core";
 
 @Component({
   selector: "app-tags-filter",
@@ -8,8 +8,11 @@ import { Component, OnInit, Input } from "@angular/core";
 export class TagsFilterComponent implements OnInit {
   @Input()
   servicesTags: string[];
+  @Output()
+  selectedTagsEmitter = new EventEmitter<string[]>();
   selectedTags: string[];
   mappedTags: any[];
+
   constructor() {}
 
   ngOnInit() {
@@ -20,5 +23,9 @@ export class TagsFilterComponent implements OnInit {
     this.mappedTags = this.servicesTags.map(t => {
       return { name: t };
     });
+  }
+
+  filterTags() {
+    this.selectedTagsEmitter.emit(this.selectedTags);
   }
 }

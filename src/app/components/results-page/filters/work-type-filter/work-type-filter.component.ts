@@ -36,7 +36,6 @@ export class WorkTypeFilterComponent implements OnInit {
   }
 
   filterWorkTypes() {
-    console.log("event emitter");
     this.selectedWTEmitter.emit(this.selectedWT);
   }
 }

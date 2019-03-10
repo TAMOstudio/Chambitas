@@ -54,7 +54,8 @@ export class ResultsService {
         (!filterTime.length || filterTime.includes(b.workType)) &&
         (!filterReviews.length || filterReviews.includes(b.reviewsTotal)) &&
         (!filterCategories.length || filterCategories.includes(b.category)) &&
-        (!filterServices.length || filterServices.includes(b.service))
+        (!filterServices.length ||
+          b.servicesOffered.some(s => filterServices.includes(s)))
       );
     });
   }

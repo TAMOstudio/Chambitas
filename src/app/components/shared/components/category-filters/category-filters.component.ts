@@ -25,7 +25,6 @@ export class CategoryFiltersComponent implements OnInit {
   }
 
   filterResults(event: string[], filter: string): void {
-    console.log("parent filter");
     switch (filter) {
       case "time": {
         this.filterTime = event;
@@ -44,6 +43,7 @@ export class CategoryFiltersComponent implements OnInit {
       }
       case "services": {
         this.filterServices = event;
+        console.log(this.filterServices);
         this.callServiceToFilterResults();
         break;
       }
@@ -58,7 +58,6 @@ export class CategoryFiltersComponent implements OnInit {
     this.resultsSubscriber$ = this.results$.subscribe(res => {
       this.results = res;
       this.servicesTags = this._resultService.getServices(res);
-      console.log(this.servicesTags);
     });
   }
 
