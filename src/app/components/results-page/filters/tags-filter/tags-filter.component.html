@@ -8,5 +8,10 @@
         <mat-icon>add</mat-icon>
       </mat-panel-description>
     </mat-expansion-panel-header>
+    <mat-selection-list [(ngModel)]="selectedTags">
+      <mat-list-option *ngFor="let tag of mappedTags" [value]="tag.name">
+        {{ tag.name }}
+      </mat-list-option>
+    </mat-selection-list>
   </mat-expansion-panel>
 </mat-accordion>

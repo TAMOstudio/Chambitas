@@ -1,7 +1,6 @@
 <div class="banner">
   <app-main-search></app-main-search>
 </div>
-<!-- {{ results$ | async | json }} -->
 <ng-container *ngIf="results$; else spinner">
   <div class="results">
     <div class="filters" *ngIf="results$">

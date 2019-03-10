@@ -8,5 +8,7 @@
   (filterCategory)="filterResults($event, 'category')"
 ></app-category-filter>
 <app-tags-filter
+  *ngIf="servicesTags.length > 0"
+  [servicesTags]="servicesTags"
   (filterServices)="filterResults($event, 'services')"
 ></app-tags-filter>

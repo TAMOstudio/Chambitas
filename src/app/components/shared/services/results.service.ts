@@ -8,10 +8,6 @@ import { Observable, BehaviorSubject } from "rxjs";
 })
 export class ResultsService {
   private resultsSource = new BehaviorSubject<Business[]>([]);
-  // filterTime = new BehaviorSubject<string[]>([]);
-  // filterReviews = new BehaviorSubject<string[]>([]);
-  // filterCategories = new BehaviorSubject<string[]>([]);
-  // filterServices = new BehaviorSubject<string[]>([]);
   resultsData = this.resultsSource.asObservable();
 
   constructor(private db: AngularFirestore) {}
@@ -35,16 +31,6 @@ export class ResultsService {
     filterServices: string[],
     results: Business[]
   ) {
-    console.log("here");
-    console.log(
-      this.getResultsByQueries(
-        filterTime,
-        filterReviews,
-        filterCategories,
-        filterServices,
-        results
-      )
-    );
     this.resultsSource.next(
       this.getResultsByQueries(
         filterTime,
@@ -62,7 +48,7 @@ export class ResultsService {
     filterCategories: string[],
     filterServices: string[],
     results: Business[]
-  ) {
+  ): Business[] {
     return results.filter(b => {
       return (
         (!filterTime.length || filterTime.includes(b.workType)) &&
@@ -71,5 +57,9 @@ export class ResultsService {
         (!filterServices.length || filterServices.includes(b.service))
       );
     });
+  }
+
+  getServices(results: Business[]): string[] {
+    return [].concat(...results.map(({ servicesOffered }) => servicesOffered));
   }
 }

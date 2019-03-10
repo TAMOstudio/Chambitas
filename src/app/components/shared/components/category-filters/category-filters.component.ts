@@ -13,6 +13,7 @@ export class CategoryFiltersComponent implements OnInit {
   filterReviews = [];
   filterCategories = [];
   filterServices = [];
+  servicesTags = [];
   @Input()
   results$: Observable<Business[]>;
   resultsSubscriber$ = new Subscription();
@@ -28,12 +29,10 @@ export class CategoryFiltersComponent implements OnInit {
     switch (filter) {
       case "time": {
         this.filterTime = event;
-        console.log(this.filterTime);
         this.callServiceToFilterResults();
         break;
       }
       case "reviews": {
-        console.log(this.filterReviews);
         this.filterReviews = event;
         this.callServiceToFilterResults();
         break;
@@ -58,8 +57,8 @@ export class CategoryFiltersComponent implements OnInit {
   buildResults() {
     this.resultsSubscriber$ = this.results$.subscribe(res => {
       this.results = res;
-      console.log("first pull of results");
-      console.log(res);
+      this.servicesTags = this._resultService.getServices(res);
+      console.log(this.servicesTags);
     });
   }
 
