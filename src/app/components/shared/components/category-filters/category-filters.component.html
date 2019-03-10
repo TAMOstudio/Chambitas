@@ -5,7 +5,9 @@
   (selectedStarsEmitter)="filterResults($event, 'reviews')"
 ></app-reviews-filter>
 <app-category-filter
-  (filterCategory)="filterResults($event, 'category')"
+  *ngIf="categoryTags.length > 0"
+  [categoryTags]="categoryTags"
+  (selectedCategoriesEmitter)="filterResults($event, 'category')"
 ></app-category-filter>
 <app-tags-filter
   *ngIf="servicesTags.length > 0"

@@ -61,6 +61,16 @@ export class ResultsService {
   }
 
   getServices(results: Business[]): string[] {
-    return [].concat(...results.map(({ servicesOffered }) => servicesOffered));
+    return Array.from(
+      new Set(
+        [].concat(...results.map(({ servicesOffered }) => servicesOffered))
+      )
+    );
+  }
+
+  getCategories(results: Business[]): string[] {
+    return Array.from(
+      new Set([].concat(...results.map(({ categories }) => categories)))
+    );
   }
 }

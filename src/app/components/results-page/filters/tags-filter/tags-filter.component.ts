@@ -11,19 +11,10 @@ export class TagsFilterComponent implements OnInit {
   @Output()
   selectedTagsEmitter = new EventEmitter<string[]>();
   selectedTags: string[];
-  mappedTags: any[];
 
   constructor() {}
 
-  ngOnInit() {
-    this.mapTags();
-  }
-
-  mapTags() {
-    this.mappedTags = this.servicesTags.map(t => {
-      return { name: t };
-    });
-  }
+  ngOnInit() {}
 
   filterTags() {
     this.selectedTagsEmitter.emit(this.selectedTags);

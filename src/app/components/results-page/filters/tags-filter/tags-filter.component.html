@@ -10,11 +10,11 @@
     </mat-expansion-panel-header>
     <mat-selection-list [(ngModel)]="selectedTags">
       <mat-list-option
-        *ngFor="let tag of mappedTags"
-        [value]="tag.name"
+        *ngFor="let tag of servicesTags"
+        [value]="tag"
         (click)="filterTags()"
       >
-        {{ tag.name }}
+        {{ tag }}
       </mat-list-option>
     </mat-selection-list>
   </mat-expansion-panel>

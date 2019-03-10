@@ -14,6 +14,7 @@ export class CategoryFiltersComponent implements OnInit {
   filterCategories = [];
   filterServices = [];
   servicesTags = [];
+  categoryTags = [];
   @Input()
   results$: Observable<Business[]>;
   resultsSubscriber$ = new Subscription();
@@ -43,7 +44,6 @@ export class CategoryFiltersComponent implements OnInit {
       }
       case "services": {
         this.filterServices = event;
-        console.log(this.filterServices);
         this.callServiceToFilterResults();
         break;
       }
@@ -58,6 +58,8 @@ export class CategoryFiltersComponent implements OnInit {
     this.resultsSubscriber$ = this.results$.subscribe(res => {
       this.results = res;
       this.servicesTags = this._resultService.getServices(res);
+      this.categoryTags = this._resultService.getCategories(res);
+      console.log(this.categoryTags, "here");
     });
   }
 
