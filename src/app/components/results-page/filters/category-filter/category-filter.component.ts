@@ -13,11 +13,10 @@ export class CategoryFilterComponent implements OnInit {
   selectedCategories: string[];
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.categoryTags[0].name);
-  }
+  ngOnInit() {}
 
   filterTags() {
+    console.log(this.selectedCategories);
     this.selectedCategoriesEmitter.emit(this.selectedCategories);
   }
 }

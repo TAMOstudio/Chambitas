@@ -7,7 +7,7 @@
           matInput
           type="text"
           placeholder="Chambeador, servicios, ó categoria"
-          [(ngModel)]="selectedState"
+          [(ngModel)]="searchWords"
           name="keywords"
         />
       </mat-form-field>
@@ -23,14 +23,16 @@
     <div class="search-dropdown">
       <i class="fas fa-map-marker-alt"></i>
       <mat-form-field>
-        <mat-select placeholder="Estado">
+        <mat-select placeholder="Estado" [(ngModel)]="searchState" name="state">
           <mat-option>---</mat-option>
-          <mat-option *ngFor="let state of states" [value]="state.value">
+          <mat-option *ngFor="let state of states" [value]="state.viewValue">
             {{ state.viewValue }}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="search-btn"><i class="fas fa-search"></i></div>
+    <div class="search-btn" (click)="onSearch()">
+      <i class="fas fa-search"></i>
+    </div>
   </form>
 </div>

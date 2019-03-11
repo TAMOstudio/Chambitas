@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { STATES } from "../../data/state";
+import { ResultsService } from "../../services/results.service";
 
 @Component({
   selector: "app-main-search",
@@ -8,8 +9,16 @@ import { STATES } from "../../data/state";
 })
 export class MainSearchComponent implements OnInit {
   states = STATES;
-  selectedState: string;
-  constructor() {}
+  searchWords: string;
+  searchState: string;
+  constructor(private _resultsService: ResultsService) {}
 
   ngOnInit() {}
+
+  onSearch() {
+    this._resultsService.getResultsByMainQuery(
+      this.searchState,
+      this.searchWords.toLowerCase()
+    );
+  }
 }

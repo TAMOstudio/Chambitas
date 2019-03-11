@@ -18,15 +18,15 @@ export class ResultsPageComponent implements OnInit {
   }
 
   populateResults(): void {
-    //this.results$ = this._resultsService.getAllResults();
+    console.log(this.results$);
   }
 
   populateQueriedResults(): void {
-    this._resultsService.getResultsByMainQueryS();
-    setTimeout(() => {
-      this.results$ = this._resultsService.getResults();
-      this._resultsService.assingResults([], [], [], [], this.results$);
+    this._resultsService.mainResultsData.subscribe(res => {
+      this.results$ = res;
+      this._resultsService.assingResults([], [], [], [], res);
       this.filter$ = this._resultsService.resultsData;
-    }, 5000);
+      console.log(this.results$);
+    });
   }
 }

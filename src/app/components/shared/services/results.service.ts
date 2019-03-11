@@ -9,7 +9,8 @@ import { Observable, BehaviorSubject, of } from "rxjs";
 export class ResultsService {
   private resultsSource = new BehaviorSubject<Business[]>([]);
   resultsData = this.resultsSource.asObservable();
-  private results: Business[];
+  mainResults = new BehaviorSubject<Business[]>([]);
+  mainResultsData = this.mainResults.asObservable();
 
   constructor(private db: AngularFirestore) {}
 
@@ -19,30 +20,29 @@ export class ResultsService {
     >;
   }
 
-  getResultsByMainQuery(state: string) {
+  getResultsByMainQuery(state: string, param: string) {
+    let ms = [];
     return this.db
-      .collection("business", ref => ref.orderBy("reviewsTotal", "desc"))
-      .valueChanges() as Observable<Business[]>;
-    // .where("state", "==", state)
-  }
-
-  getResultsByMainQueryS() {
-    this.db
-      .collection("business", ref => ref.orderBy("reviewsTotal", "desc"))
+      .collection("business", ref =>
+        ref.orderBy("reviewsTotal", "desc").where("state", "==", state)
+      )
       .valueChanges()
-      .subscribe(r => {
-        this.setResults(r);
+      .subscribe(res => {
+        ms = this.search(res, param);
+        this.mainResults.next(ms);
       });
   }
 
-  setResults(res: any) {
-    this.results = res;
-  }
-
-  getResults() {
-    console.log("hey");
-    console.log(this.results);
-    return this.results;
+  search(res: {}[], param: string) {
+    return res.filter(r => {
+      console.log(r["name"]);
+      return (
+        r["name"].toLowerCase() === param
+        //  ||
+        // r["servicesOffered"].some(s => s.toLowerCase() === param) ||
+        // r["categories"].some(c => c.toLowerCase() === param)
+      );
+    });
   }
 
   assingResults(
@@ -70,13 +70,14 @@ export class ResultsService {
     filterServices: string[],
     results: Business[]
   ): Business[] {
-    return results.filter(b => {
+    return results.filter(f => {
       return (
-        (!filterTime.length || filterTime.includes(b.workType)) &&
-        (!filterReviews.length || filterReviews.includes(b.reviewsTotal)) &&
-        (!filterCategories.length || filterCategories.includes(b.category)) &&
+        (!filterTime.length || filterTime.includes(f.workType)) &&
+        (!filterReviews.length || filterReviews.includes(f.reviewsTotal)) &&
+        (!filterCategories.length ||
+          f.categories.some(c => filterCategories.includes(c))) &&
         (!filterServices.length ||
-          b.servicesOffered.some(s => filterServices.includes(s)))
+          f.servicesOffered.some(s => filterServices.includes(s)))
       );
     });
   }
