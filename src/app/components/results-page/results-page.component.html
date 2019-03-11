@@ -3,10 +3,10 @@
 </div>
 <ng-container *ngIf="results$; else spinner">
   <div class="results">
-    <div class="filters" *ngIf="results$">
+    <div class="filters" *ngIf="results$.length > 0">
       <app-category-filters [results$]="results$"></app-category-filters>
     </div>
-    <div class="chambeadores">
+    <div class="chambeadores" *ngIf="results$.length > 0">
       <app-business-results [results$]="filter$"></app-business-results>
     </div>
   </div>

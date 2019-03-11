@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AngularFirestore } from "angularfire2/firestore";
 import { Business } from "../models/bussiness.model";
-import { Observable, BehaviorSubject } from "rxjs";
+import { Observable, BehaviorSubject, of } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -9,6 +9,7 @@ import { Observable, BehaviorSubject } from "rxjs";
 export class ResultsService {
   private resultsSource = new BehaviorSubject<Business[]>([]);
   resultsData = this.resultsSource.asObservable();
+  private results: Business[];
 
   constructor(private db: AngularFirestore) {}
 
@@ -18,10 +19,30 @@ export class ResultsService {
     >;
   }
 
-  getResultsByMainQuery() {
+  getResultsByMainQuery(state: string) {
     return this.db
       .collection("business", ref => ref.orderBy("reviewsTotal", "desc"))
       .valueChanges() as Observable<Business[]>;
+    // .where("state", "==", state)
+  }
+
+  getResultsByMainQueryS() {
+    this.db
+      .collection("business", ref => ref.orderBy("reviewsTotal", "desc"))
+      .valueChanges()
+      .subscribe(r => {
+        this.setResults(r);
+      });
+  }
+
+  setResults(res: any) {
+    this.results = res;
+  }
+
+  getResults() {
+    console.log("hey");
+    console.log(this.results);
+    return this.results;
   }
 
   assingResults(

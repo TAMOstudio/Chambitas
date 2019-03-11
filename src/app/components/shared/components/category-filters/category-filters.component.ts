@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ResultsService } from "../../services/results.service";
 import { Business } from "../../models/bussiness.model";
-import { Observable, Subscription } from "rxjs";
+import { of, Subscription } from "rxjs";
 
 @Component({
   selector: "app-category-filters",
@@ -16,7 +16,7 @@ export class CategoryFiltersComponent implements OnInit {
   servicesTags = [];
   categoryTags = [];
   @Input()
-  results$: Observable<Business[]>;
+  results$: Business[];
   resultsSubscriber$ = new Subscription();
   results: Business[];
   constructor(private _resultService: ResultsService) {}
@@ -55,11 +55,10 @@ export class CategoryFiltersComponent implements OnInit {
   }
 
   buildResults() {
-    this.resultsSubscriber$ = this.results$.subscribe(res => {
+    this.resultsSubscriber$ = of(this.results$).subscribe(res => {
       this.results = res;
       this.servicesTags = this._resultService.getServices(res);
       this.categoryTags = this._resultService.getCategories(res);
-      console.log(this.categoryTags, "here");
     });
   }
 

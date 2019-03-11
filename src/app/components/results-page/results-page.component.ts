@@ -9,7 +9,7 @@ import { Business } from "../shared/models/bussiness.model";
   styleUrls: ["./results-page.component.scss"]
 })
 export class ResultsPageComponent implements OnInit {
-  results$: Observable<Business[]>;
+  results$: Business[];
   filter$: Observable<Business[]>;
   constructor(private _resultsService: ResultsService) {}
 
@@ -18,14 +18,15 @@ export class ResultsPageComponent implements OnInit {
   }
 
   populateResults(): void {
-    this.results$ = this._resultsService.getAllResults();
+    //this.results$ = this._resultsService.getAllResults();
   }
 
   populateQueriedResults(): void {
-    this.results$ = this._resultsService.getResultsByMainQuery();
-    this.results$.subscribe(res => {
-      this._resultsService.assingResults([], [], [], [], res);
+    this._resultsService.getResultsByMainQueryS();
+    setTimeout(() => {
+      this.results$ = this._resultsService.getResults();
+      this._resultsService.assingResults([], [], [], [], this.results$);
       this.filter$ = this._resultsService.resultsData;
-    });
+    }, 5000);
   }
 }
